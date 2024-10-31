@@ -8,12 +8,12 @@ this will return the object:
   answerPdfGeneration:  answerPdfGeneration,
   projectName: projectName,
   components: components,
-  browsers: browsers
+  typeOfInterfaceApplication: typeOfInterfaceApplication
 }
 */
 let answer = await testPlanCommandLine()
 
 if(answer.answerPdfGeneration === true){
-    let pdfContent = getPDFContentForServer(answer.projectName, answer.components, answer.browsers)
+    let pdfContent = getPDFContentForServer(answer.projectName, answer.components, answer.typeOfInterfaceApplication)
     pdfModelServer(pdfContent)
 }

@@ -26,26 +26,26 @@ export async function testPlanCommandLine(){
         ],
     });
 
-    let browsers = 'none';
+    let typeOfInterfaceApplication = 'none';
     if (components != 'backend'){
-         browsers = await select({
-            message: 'Select the browsers you need to test: ',
+        typeOfInterfaceApplication = await select({
+            message: 'Select the type of the interface: ',
             choices: [
             {
-                name: 'chrome',
-                value: 'chrome'
+                name: 'desktop',
+                value: 'desktop'
             },
             {
-                name: 'firefox',
-                value: 'firefox'
+                name: 'web',
+                value: 'web'
             },
             {
-                name: 'safari',
-                value: 'safari',
+                name: 'mobile',
+                value: 'mobile',
             },
             {
-                name: 'chrome + firefox + safari',
-                value: 'chrome + firefox + safari',
+                name: 'desktop + web + mobile',
+                value: 'desktop + web + mobile',
             }
             ],
         });
@@ -57,6 +57,6 @@ export async function testPlanCommandLine(){
         answerPdfGeneration:  answerPdfGeneration,
         projectName: projectName,
         components: components,
-        browsers: browsers
+        typeOfInterfaceApplication: typeOfInterfaceApplication
     }
 }
